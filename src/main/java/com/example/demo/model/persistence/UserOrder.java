@@ -25,7 +25,6 @@ public class UserOrder {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonProperty
-	@Column
 	private Long id;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
