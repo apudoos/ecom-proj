@@ -107,6 +107,20 @@ public class UserControllerTest {
     }
 
 
+    @Test
+    public void create_user_bad_password() throws Exception {
+        //when(encoder.encode("testPassword")).thenReturn("thisIsHashed");
+        CreateUserRequest r = new CreateUserRequest();
+        r.setUsername("test");
+        r.setPassword("test");
+        r.setConfirmPassword("test");
+
+        final ResponseEntity<User> response = userController.createUser(r);
+
+        assertNotNull(response);
+        assertEquals(400, response.getStatusCodeValue());
+    }
+
 
 
 }
